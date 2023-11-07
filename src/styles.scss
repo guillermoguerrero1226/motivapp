@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "./theme/colors.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+//futhermore it's necesary override the $theme-colors
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+
+);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+body {
+    background-color: $primary;
+    height: 100vh;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #777;
+}
+
+button {
+    border-radius: 12px !important;
+    background: #004669;
+    box-shadow: 0px 4px 10px 2px rgba(16, 16, 16, 0.31);
+}
+
+input {
+    border-radius: 12px !important;
+
+    &.no-valid {
+        border: 2px solid $red;
+        color: $red;
+    }
+}
+
+.text-error {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.link-button {
+    box-shadow: none !important;
+}
+
+.dropdown-menu {
+    background-color: #efefef;
+}

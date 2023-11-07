@@ -1,0 +1,68 @@
+<div class="sign-up-container d-flex justify-content-center align-items-start   ">
+    <div class="header-container pt-4 px-4">
+        <div class="header"></div>
+    </div>
+    <div class="card px-2 text-bg-secondary">
+        <div class="card-body">
+            <div class="mt-4">
+                <h5 class="card-title text-center text-primary fw-bold">Registrarse</h5>
+            </div>
+            <div class="mb-4">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                    <div class="my-4 py-2">
+                        <div class="form-floating my-3">
+                            <input
+                                [ngClass]="{'no-valid': !!isValid('names')}"
+                                formControlName="names"
+                                type="text"
+                                class="form-control"
+                                placeholder="Nombres"
+                                id="names">
+                            <label for="names">Nombres</label>
+                            <span *ngIf="!!isValid('names')" class="text-error text-danger fw-semibold">Debes ingresar al menos un nombre</span>
+                        </div>
+                        <div class="form-floating my-3">
+                            <input
+                                [ngClass]="{'no-valid': !!isValid('lastNames')}"
+                                formControlName="lastNames"
+                                type="text"
+                                class="form-control"
+                                placeholder="Apellidos"
+                                id="lastNames">
+                            <label for="lastNames" class="text-gray">Apellidos</label>
+                            <span *ngIf="!!isValid('lastNames')" class="text-error text-danger fw-semibold">Debes ingresar al menos un apellido</span>
+                        </div>
+                        <div class="form-floating my-3">
+                            <input
+                                [ngClass]="{'no-valid': !!isValid('email')}"
+                                formControlName="email"
+                                type="email"
+                                class="form-control"
+                                placeholder="Email"
+                                id="password">
+                            <label for="password" class="text-gray">Email</label>
+                            <span *ngIf="!!isValid('email')" class="text-error text-danger fw-semibold">Debes ingresar un email valido</span>
+                        </div>
+                        <div class="form-floating my-3">
+                            <input
+                                [ngClass]="{'no-valid': !!isValid('password')}"
+                                formControlName="password"
+                                type="password"
+                                class="form-control"
+                                placeholder="Contraseña"
+                                id="password">
+                            <label for="password" class="text-gray">Contraseña</label>
+                            <span *ngIf="!!isValid('password')" class="text-error text-danger fw-semibold">La contraseña debe tener al menos 6 caracteres</span>
+                        </div>
+                        <div class="mt-2">
+                            <button type="button" class="link-button px-0 fw-bold btn btn-link text-primary fs-6">¿Olvidaste tu contraseña?</button>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-primary p-2" [disabled]="!signUpForm.valid" type="submit">Iniciar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

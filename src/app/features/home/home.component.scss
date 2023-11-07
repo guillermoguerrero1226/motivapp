@@ -1,0 +1,74 @@
+@import "../../../theme/colors.scss";
+
+.header-nav {
+  height: 20%;
+
+  & .header-image {
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../assets/images/logo-unad-transparent.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+  }
+
+  & .btn-profile {
+    height: fit-content;
+    color: #ffffff;
+  }
+}
+
+.header-name {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #efefef;
+}
+
+.home-content-container {
+  height: 100%;
+
+  & .btn-notification {
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: -25px;
+    margin: auto;
+
+    & button i {
+      color: #efefef;
+    }
+  }
+
+  & .home-content {
+    height: 100%;
+    & .action {
+      width: 130px;
+      height: 130px;
+      position: relative;
+      top: -40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 11px -1px rgba(0, 0, 0, 0.25);
+      color: #efefef;
+      background: linear-gradient(247deg, #016ea5 2.49%, $primary 90.52%);
+      cursor: pointer;
+
+      & i {
+        font-size: 48px !important;
+      }
+
+      & .action-text {
+        font-size: 16px !important;
+      }
+    }
+
+    & .action:hover {
+      background: $secondary;
+    }
+
+    & .action:active {
+      background: $secondary;
+      box-shadow: none;
+      border: 1px solid #efefef;
+    }
+  }
+}
